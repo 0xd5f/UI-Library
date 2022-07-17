@@ -243,6 +243,11 @@ local SaveManager = {} do
 
 		SaveManager.AutoloadLabel = section:AddLabel('Current autoload config: none', true)
 
+		
+		local info = Tabs.Main:AddRightGroupbox('Info')
+		info:AddLabel('This is a label')
+		info:AddLabel('This is a label')
+		
 		if isfile(self.Folder .. '/settings/autoload.txt') then
 			local name = readfile(self.Folder .. '/settings/autoload.txt')
 			SaveManager.AutoloadLabel:SetText('Current autoload config: ' .. name)
@@ -254,8 +259,6 @@ local SaveManager = {} do
 	SaveManager:BuildFolderTree()
 end
 
-local info = Tabs.Main:AddRightGroupbox('Info')
-info:AddLabel('This is a label')
-info:AddLabel('This is a label')
+
 
 return SaveManager
