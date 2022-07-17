@@ -1,7 +1,7 @@
 local httpService = game:GetService('HttpService')
 
-local SaveManager = {} do
-	SaveManager.Folder = 'LinoriaLibSettings'
+local SaveManager = {} do 
+	SaveManager.Folder = 'BCWARESettings'
 	SaveManager.Ignore = {}
 	SaveManager.Parser = {
 		Toggle = {
