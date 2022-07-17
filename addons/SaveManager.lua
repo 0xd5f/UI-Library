@@ -244,9 +244,7 @@ local SaveManager = {} do
 		SaveManager.AutoloadLabel = section:AddLabel('Current autoload config: none', true)
                
 
-		local Info = Tabs.Main:AddRightGroupbox('Info')
-		Info = section:AddLabel('Discord: discord.gg/gV9SvSDryu', true)
-		Info = section:AddLabel('WebSite: ZTREH.RU', true)
+
 		
 		if isfile(self.Folder .. '/settings/autoload.txt') then
 			local name = readfile(self.Folder .. '/settings/autoload.txt')
