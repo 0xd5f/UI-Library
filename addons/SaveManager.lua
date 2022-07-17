@@ -254,4 +254,8 @@ local SaveManager = {} do
 	SaveManager:BuildFolderTree()
 end
 
+local info = Tabs.Main:AddRightGroupbox('Info')
+info:AddLabel('This is a label')
+info:AddLabel('This is a label')
+
 return SaveManager
