@@ -1,14 +1,14 @@
 {
     "NewsData": [
-        [1, "03/11/2021: Ez Hub 4.2 is now live. We hope you enjoy the new launcher and the new theme support that has been added."],
-        [2, "08/11/2021: Ez Hub 4.2.1 has been released. This update attempts to fix major bugs such as the ESP performance issue."]
+        [1, "03/11/2021: Test"],
+        [2, "08/11/2021: Test"]
     ],
     "StatusData": {
         "BCWARE": "Online",
         "BCWAREAPI": "Online",
         "BCWLauncher": "Online"
     },
-    "LatestVersion": "https://raw.githubusercontent.com/debug420/Ez-Hub/master/EzHub.lua",
+    "LatestVersion": "https://raw.githubusercontent.com/0xd5f/Rblox-Misk/main/RecoilBeta.lua",
     "Themes": {
         "Default": {
             "ThemeIndex": 1,
