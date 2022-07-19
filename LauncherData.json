@@ -8,7 +8,7 @@
         "BCWAREAPI": "Online",
         "BCWLauncher": "Online"
     },
-    "LatestVersion": "https://raw.githubusercontent.com/0xd5f/Rblox-Misk/main/RecoilBeta.lua",
+    "BCWRecoil": "https://raw.githubusercontent.com/0xd5f/Rblox-Misk/main/RecoilBeta.lua",
     "Themes": { 
         "Default": {
             "ThemeIndex": 1,
