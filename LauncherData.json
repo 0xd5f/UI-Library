@@ -9,6 +9,7 @@
         "BCWLauncher": "Online"
     },
     "BCWRecoil": "https://raw.githubusercontent.com/0xd5f/Rblox-Misk/main/RecoilBeta.lua",
+    "BCWSonic": "https://raw.githubusercontent.com/0xd5f/Rblox-Misk/main/SonicUltimate.lua",
     "Themes": { 
         "Default": {
             "ThemeIndex": 1,
