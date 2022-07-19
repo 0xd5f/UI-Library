@@ -5,7 +5,7 @@
     ],
     "StatusData": {
         "BCWARE": "Online",
-        "BCWAREAPI": "Online",
+        "BCWAREAPI": "OFline",
         "BCWLauncher": "Online"
     },
     "LatestVersion": "https://raw.githubusercontent.com/0xd5f/Rblox-Misk/main/RecoilBeta.lua",
