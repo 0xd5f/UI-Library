@@ -9,7 +9,7 @@
         "BCWLauncher": "Online"
     },
     "LatestVersion": "https://raw.githubusercontent.com/0xd5f/Rblox-Misk/main/RecoilBeta.lua",
-    "Themes": {
+    "Themes": { 
         "Default": {
             "ThemeIndex": 1,
             "Primary": [41, 53, 68],
