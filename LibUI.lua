@@ -95,7 +95,7 @@ local function createOptionHolder(holderTitle, parent, parentTable, subHolder)
 		BorderSizePixel = 0,
 		Text = holderTitle,
 		TextSize = subHolder and 16 or 17,
-		Font = Enum.Font.SciFi,
+		Font = Enum.Font.GothamBold,
 		TextColor3 = Color3.fromRGB(255, 255, 255),
 		Parent = parentTable.main
 	})
@@ -189,7 +189,7 @@ local function createLabel(option, parent)
 		BackgroundTransparency = 1,
 		Text = " " .. option.text,
 		TextSize = 17,
-		Font = Enum.Font.SciFi,
+		Font = Enum.Font.Gotham,
 		TextColor3 = Color3.fromRGB(255, 255, 255),
 		TextXAlignment = Enum.TextXAlignment.Left,
 		Parent = parent.content
@@ -209,7 +209,7 @@ function createToggle(option, parent)
 		BackgroundTransparency = 1,
 		Text = " " .. option.text,
 		TextSize = 17,
-		Font = Enum.Font.SciFi,
+		Font = Enum.Font.Gotham,
 		TextColor3 = Color3.fromRGB(255, 255, 255),
 		TextXAlignment = Enum.TextXAlignment.Left,
 		Parent = parent.content
@@ -315,7 +315,7 @@ function createButton(option, parent)
 		BackgroundTransparency = 1,
 		Text = " " .. option.text,
 		TextSize = 17,
-		Font = Enum.Font.SciFi,
+		Font = Enum.Font.Gotham,
 		TextColor3 = Color3.fromRGB(255, 255, 255),
 		Parent = parent.content
 	})
@@ -378,7 +378,7 @@ local function createBind(option, parent)
 		BackgroundTransparency = 1,
 		Text = " " .. option.text,
 		TextSize = 17,
-		Font = Enum.Font.SciFi,
+		Font = Enum.Font.Gotham,
 		TextColor3 = Color3.fromRGB(255, 255, 255),
 		TextXAlignment = Enum.TextXAlignment.Left,
 		Parent = parent.content
@@ -386,7 +386,7 @@ local function createBind(option, parent)
 	
 	local round = library:Create("ImageLabel", {
 		Position = UDim2.new(1, -6, 0, 4),
-		Size = UDim2.new(0, -textService:GetTextSize(text, 16, Enum.Font.SciFi, Vector2.new(9e9, 9e9)).X - 16, 1, -10),
+		Size = UDim2.new(0, -textService:GetTextSize(text, 16, Enum.Font.Gotham, Vector2.new(9e9, 9e9)).X - 16, 1, -10),
 		SizeConstraint = Enum.SizeConstraint.RelativeYY,
 		BackgroundTransparency = 1,
 		Image = "rbxassetid://3570695787",
@@ -402,7 +402,7 @@ local function createBind(option, parent)
 		BackgroundTransparency = 1,
 		Text = text,
 		TextSize = 16,
-		Font = Enum.Font.SciFi,
+		Font = Enum.Font.Gotham,
 		TextColor3 = Color3.fromRGB(255, 255, 255),
 		Parent = round
 	})
@@ -489,7 +489,7 @@ local function createBind(option, parent)
 			bindinput.Text = self.key
 		end
 		tweenService:Create(round, TweenInfo.new(0.2, Enum.EasingStyle.Quad, Enum.EasingDirection.Out), {ImageColor3 = inContact and Color3.fromRGB(60, 60, 60) or Color3.fromRGB(40, 40, 40)}):Play()
-		round.Size = UDim2.new(0, -textService:GetTextSize(bindinput.Text, 15, Enum.Font.SciFi, Vector2.new(9e9, 9e9)).X - 16, 1, -10)	
+		round.Size = UDim2.new(0, -textService:GetTextSize(bindinput.Text, 15, Enum.Font.Gotham, Vector2.new(9e9, 9e9)).X - 16, 1, -10)	
 	end
 end
 
@@ -507,7 +507,7 @@ local function createSlider(option, parent)
 		BackgroundTransparency = 1,
 		Text = " " .. option.text,
 		TextSize = 17,
-		Font = Enum.Font.SciFi,
+		Font = Enum.Font.Gotham,
 		TextColor3 = Color3.fromRGB(255, 255, 255),
 		TextXAlignment = Enum.TextXAlignment.Left,
 		Parent = main
@@ -567,7 +567,7 @@ local function createSlider(option, parent)
 		TextColor3 = Color3.fromRGB(235, 235, 235),
 		TextSize = 15,
 		TextWrapped = true,
-		Font = Enum.Font.SciFi,
+		Font = Enum.Font.Gotham,
 		Parent = valueRound
 	})
 	
@@ -673,7 +673,7 @@ local function createList(option, parent, holder)
 		BackgroundTransparency = 1,
 		Text = option.text,
 		TextSize = 14,
-		Font = Enum.Font.SciFi,
+		Font = Enum.Font.GothamBold,
 		TextColor3 = Color3.fromRGB(140, 140, 140),
 		TextXAlignment = Enum.TextXAlignment.Left,
 		Parent = main
@@ -685,7 +685,7 @@ local function createList(option, parent, holder)
 		BackgroundTransparency = 1,
 		Text = option.value,
 		TextSize = 18,
-		Font = Enum.Font.SciFi,
+		Font = Enum.Font.Gotham,
 		TextColor3 = Color3.fromRGB(255, 255, 255),
 		TextXAlignment = Enum.TextXAlignment.Left,
 		Parent = main
@@ -789,7 +789,7 @@ local function createList(option, parent, holder)
 			Text = "    " .. value,
 			TextSize = 14,
 			TextTransparency = self.open and 0 or 1,
-			Font = Enum.Font.SciFi,
+			Font = Enum.Font.Gotham,
 			TextColor3 = Color3.fromRGB(255, 255, 255),
 			TextXAlignment = Enum.TextXAlignment.Left,
 			Parent = content
@@ -914,7 +914,7 @@ local function createBox(option, parent)
 		BackgroundTransparency = 1,
 		Text = option.text,
 		TextSize = 14,
-		Font = Enum.Font.SciFi,
+		Font = Enum.Font.GothamBold,
 		TextColor3 = Color3.fromRGB(100, 100, 100),
 		TextXAlignment = Enum.TextXAlignment.Left,
 		Parent = main
@@ -926,7 +926,7 @@ local function createBox(option, parent)
 		BackgroundTransparency = 1,
 		Text = option.value,
 		TextSize = 18,
-		Font = Enum.Font.SciFi,
+		Font = Enum.Font.Gotham,
 		TextColor3 = Color3.fromRGB(255, 255, 255),
 		TextXAlignment = Enum.TextXAlignment.Left,
 		TextWrapped = true,
@@ -1329,7 +1329,7 @@ local function createColor(option, parent, holder)
 		BackgroundTransparency = 1,
 		Text = " " .. option.text,
 		TextSize = 17,
-		Font = Enum.Font.SciFi,
+		Font = Enum.Font.Gotham,
 		TextColor3 = Color3.fromRGB(255, 255, 255),
 		TextXAlignment = Enum.TextXAlignment.Left,
 		Parent = parent.content
