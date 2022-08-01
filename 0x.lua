@@ -141,9 +141,9 @@ DarkHubLib.Name = "DarkHubLib"
 DarkHubLib.Parent = game.CoreGui
 DarkHubLib.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
 
-function DarkLib:Window(Config)
+function DarkLib:Window(WindowTitle)
 	
-	local Title = Config.Title or "Hydra"
+	
 
 	
 	local firsttab = false
@@ -177,7 +177,7 @@ function DarkLib:Window(Config)
 	Title.Position = UDim2.new(0.42778793, 0, 0.041837737, 0)
 	Title.Size = UDim2.new(0, 78, 0, 30)
 	Title.Font = Enum.Font.Gotham
-	Title.Text = Title
+	Title.Text = WindowTitle or ''
 	Title.TextColor3 = Color3.fromRGB(168, 168, 168)
 	Title.TextSize = 20.000
 
