@@ -1,3 +1,6 @@
+
+
+
 if game.CoreGui:FindFirstChild("DarkHubLib") then
     game.CoreGui.DarkHubLib:Destroy()
 end
@@ -438,9 +441,21 @@ function DarkLib:Window(WindowTitle)
 
 			Status.Name = "Status"
 			Status.Parent = Toggle
-			Status.BackgroundColor3 = Color3.fromRGB(255, 39, 42)
+			Status.BackgroundColor3 = Color3.fromRGB(45, 45, 45)
+            Status.BorderColor3 = Color3.fromRGB(76, 76, 76)
+            Status.BorderSizePixel = 5
 			Status.Position = UDim2.new(0.947046876, 0, 0.172413796, 0)
 			Status.Size = UDim2.new(0, 19, 0, 19)
+
+            local uICorner10 = Instance.new("UICorner")
+            uICorner10.Name = "uICorner10"
+            uICorner10.CornerRadius = UDim.new(0, 3)
+            uICorner10.Parent = Status
+
+            local uIStroke1 = Instance.new("UIStroke")
+            uIStroke1.Name = "uIStroke1"
+            uIStroke1.Color = Color3.fromRGB(76, 76, 76)
+            uIStroke1.Parent = Status
 
 			StatusUICorner.CornerRadius = UDim.new(0, 6)
 			StatusUICorner.Name = "StatusUICorner"
@@ -472,19 +487,16 @@ function DarkLib:Window(WindowTitle)
 					if Toggled == false then
 						Toggled = not Toggled
 						pcall(callback, Toggled)
-						TweenService:Create(
-							Status,
-							TweenInfo.new(.3, Enum.EasingStyle.Quad, Enum.EasingDirection.Out),
-							{BackgroundColor3 = Color3.fromRGB(44, 255, 58)}
-						):Play()
+
+                        game:GetService('TweenService'):Create(Status, TweenInfo.new(0.2), {BackgroundColor3 = Color3.fromRGB(23, 143, 75)}):Play()
+                        game:GetService('TweenService'):Create(uIStroke1, TweenInfo.new(0.2), {Color = Color3.fromRGB(32, 202, 106)}):Play()
 					else
 						Toggled = not Toggled
 						pcall(callback, Toggled)
-						TweenService:Create(
-							Status,
-							TweenInfo.new(.3, Enum.EasingStyle.Quad, Enum.EasingDirection.Out),
-							{BackgroundColor3 = Color3.fromRGB(255, 39, 42)}
-						):Play()
+
+                        game:GetService('TweenService'):Create(Status, TweenInfo.new(0.2), {BackgroundColor3 = Color3.fromRGB(45, 45, 45)}):Play()
+                        game:GetService('TweenService'):Create(uIStroke1, TweenInfo.new(0.2), {Color = Color3.fromRGB(76, 76, 76)}):Play()
+                       
 					end
 				end
 			)
@@ -567,10 +579,7 @@ function DarkLib:Window(WindowTitle)
 			local function slide(input)
 				local pos =
 					UDim2.new(
-						math.clamp((input.Position.X - SlideFrame.AbsolutePosition.X) / SlideFrame.AbsoluteSize.X, 0, 1),
-						0,
-						1,
-						0
+						math.clamp((input.Position.X - SlideFrame.AbsolutePosition.X) / SlideFrame.AbsoluteSize.X, 0, 1), 0, 1, 0
 					)
 				ValueFrame:TweenSize(pos, Enum.EasingDirection.Out, Enum.EasingStyle.Quart, 0.3, true)
 				local s = math.floor(((pos.X.Scale * max) / max) * (max - min) + min)
@@ -924,6 +933,17 @@ function DarkLib:Window(WindowTitle)
 			CurrentColor.BackgroundColor3 = preset
 			CurrentColor.Position = UDim2.new(0.947046876, 0, 0.172413796, 0)
 			CurrentColor.Size = UDim2.new(0, 19, 0, 19)
+            CurrentColor.BorderSizePixel = 5
+
+            local uICorner123 = Instance.new("UICorner")
+            uICorner123.Name = "uICorner10"
+            uICorner123.CornerRadius = UDim.new(0, 3)
+            uICorner123.Parent = CurrentColor
+
+            local uIStroke21 = Instance.new("UIStroke")
+            uIStroke21.Name = "uIStroke1"
+            uIStroke21.Color = Color3.fromRGB(33, 33, 33)
+            uIStroke21.Parent = CurrentColor
 
 			ColorUICorner.CornerRadius = UDim.new(0, 6)
 			ColorUICorner.Name = "ColorUICorner"
@@ -956,6 +976,10 @@ function DarkLib:Window(WindowTitle)
 			ColorpickerFrameUICorner.CornerRadius = UDim.new(0, 6)
 			ColorpickerFrameUICorner.Name = "ColorpickerFrameUICorner"
 			ColorpickerFrameUICorner.Parent = ColorpickerFrame
+
+
+
+
 
 			Hue.Name = "Hue"
 			Hue.Parent = ColorpickerFrame
@@ -1058,9 +1082,21 @@ function DarkLib:Window(WindowTitle)
 
 			RainbowStatus.Name = "RainbowStatus"
 			RainbowStatus.Parent = RainbowToggle
-			RainbowStatus.BackgroundColor3 = Color3.fromRGB(255, 39, 42)
+			RainbowStatus.BackgroundColor3 = Color3.fromRGB(45, 45, 45)
 			RainbowStatus.Position = UDim2.new(0.909311056, 0, 0.137931034, 0)
 			RainbowStatus.Size = UDim2.new(0, 19, 0, 19)
+
+
+            local uICorner12 = Instance.new("UICorner")
+            uICorner12.Name = "uICorner10"
+            uICorner12.CornerRadius = UDim.new(0, 3)
+            uICorner12.Parent = RainbowStatus
+
+            local uIStroke3 = Instance.new("UIStroke")
+            uIStroke3.Name = "uIStroke1"
+            uIStroke3.Color = Color3.fromRGB(76, 76, 76)
+            uIStroke3.Parent = RainbowStatus
+
 
 			RainbowStatusUICorner.CornerRadius = UDim.new(0, 6)
 			RainbowStatusUICorner.Name = "RainbowStatusUICorner"
@@ -1202,11 +1238,12 @@ function DarkLib:Window(WindowTitle)
 					end
 
 					if RainbowColorPicker then
-						TweenService:Create(
-							RainbowStatus,
-							TweenInfo.new(.3, Enum.EasingStyle.Quad, Enum.EasingDirection.Out),
-							{BackgroundColor3 = Color3.fromRGB(44, 255, 58)}
-						):Play()
+	
+
+
+                        game:GetService('TweenService'):Create(RainbowStatus, TweenInfo.new(0.2), {BackgroundColor3 = Color3.fromRGB(23, 143, 75)}):Play()
+                        game:GetService('TweenService'):Create(uIStroke3, TweenInfo.new(0.2), {Color = Color3.fromRGB(32, 202, 106)}):Play()
+                   
 
 						OldToggleColor = CurrentColor.BackgroundColor3
 						OldColor = Color.BackgroundColor3
@@ -1224,11 +1261,9 @@ function DarkLib:Window(WindowTitle)
 							wait()
 						end
 					elseif not RainbowColorPicker then
-						TweenService:Create(
-							RainbowStatus,
-							TweenInfo.new(.3, Enum.EasingStyle.Quad, Enum.EasingDirection.Out),
-							{BackgroundColor3 = Color3.fromRGB(255, 39, 42)}
-						):Play()
+                    
+                        game:GetService('TweenService'):Create(RainbowStatus, TweenInfo.new(0.2), {BackgroundColor3 = Color3.fromRGB(45, 45, 45)}):Play()
+                        game:GetService('TweenService'):Create(uIStroke3, TweenInfo.new(0.2), {Color = Color3.fromRGB(76, 76, 76)}):Play()
 						CurrentColor.BackgroundColor3 = OldToggleColor
 						Color.BackgroundColor3 = OldColor
 
@@ -1506,3 +1541,5 @@ function DarkLib:Window(WindowTitle)
 	return Win
 end
 return DarkLib
+
+
