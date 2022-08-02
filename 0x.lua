@@ -504,7 +504,7 @@ function DarkLib:Window(WindowTitle)
 			ItemHolder.CanvasSize = UDim2.new(0, 0, 0, ItemHolderUIList.AbsoluteContentSize.Y)
 		end
 
-		function Cont:Slider(text, min, max, callback)
+		function Cont:Slider(text, min, def, max, callback)
 			local dragging = false
 			local Slider = Instance.new("TextButton")
 			local SliderUICorner = Instance.new("UICorner")
@@ -572,18 +572,28 @@ function DarkLib:Window(WindowTitle)
 			Value.BorderSizePixel = 0
 			Value.Size = UDim2.new(1, 0, 1, 0)
 			Value.Font = Enum.Font.Gotham
-			Value.Text = min
+			Value.Text = def
 			Value.TextColor3 = Color3.fromRGB(195, 195, 195)
 			Value.TextSize = 14.000
-
+            
+                ValueFrame:TweenSize(					
+                    UDim2.new(
+						math.clamp(def / max, 0, 1),
+						0,
+						1,
+						0
+					), Enum.EasingDirection.Out, Enum.EasingStyle.Quart, 0.3, true)
+            
 			local function slide(input)
 				local pos =
 					UDim2.new(
-						math.clamp((input.Position.X - SlideFrame.AbsolutePosition.X) / SlideFrame.AbsoluteSize.X, 0, 1), 0, 1, 0
+						math.clamp((input.Position.X - SlideFrame.AbsolutePosition.X) / SlideFrame.AbsoluteSize.X, 0, 1),
+						0,
+						1,
+						0
 					)
 				ValueFrame:TweenSize(pos, Enum.EasingDirection.Out, Enum.EasingStyle.Quart, 0.3, true)
-				--local s = math.floor(((pos.X.Scale * max) / max) * (max - min) + min)
-				local s = math.floor(((pos.X.Scale * max*10) / max) * (max - min) + min) / 10
+				local s = math.floor(((pos.X.Scale * max) / max) * (max - min) + min)
 				Value.Text = tostring(s)
 				pcall(callback, s)
 			end
@@ -613,7 +623,7 @@ function DarkLib:Window(WindowTitle)
 				end
 			)
 
-                ItemHolder.CanvasSize = UDim2.new(0, 0, 0, ItemHolderUIList.AbsoluteContentSize.Y)
+			ItemHolder.CanvasSize = UDim2.new(0, 0, 0, ItemHolderUIList.AbsoluteContentSize.Y)
 		end
 
 		function Cont:Dropdown(text, list, callback)
