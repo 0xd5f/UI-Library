@@ -593,7 +593,7 @@ function DarkLib:Window(WindowTitle)
 						0
 					)
 				ValueFrame:TweenSize(pos, Enum.EasingDirection.Out, Enum.EasingStyle.Quart, 0.3, true)
-				local s = math.floor(((pos.X.Scale * max) / max) * (max - min) + min)
+				local s = math.floor(((pos.X.Scale * max * 10) / max) * (max - min) + min) / 10
 				Value.Text = tostring(s)
 				pcall(callback, s)
 			end
