@@ -582,7 +582,8 @@ function DarkLib:Window(WindowTitle)
 						math.clamp((input.Position.X - SlideFrame.AbsolutePosition.X) / SlideFrame.AbsoluteSize.X, 0, 1), 0, 1, 0
 					)
 				ValueFrame:TweenSize(pos, Enum.EasingDirection.Out, Enum.EasingStyle.Quart, 0.3, true)
-				local s = math.floor(((pos.X.Scale * max) / max) * (max - min) + min)
+				--local s = math.floor(((pos.X.Scale * max) / max) * (max - min) + min)
+				local s = math.floor(((pos.X.Scale * max*10) / max) * (max - min) + min) / 10
 				Value.Text = tostring(s)
 				pcall(callback, s)
 			end
@@ -612,7 +613,7 @@ function DarkLib:Window(WindowTitle)
 				end
 			)
 
-			ItemHolder.CanvasSize = UDim2.new(0, 0, 0, ItemHolderUIList.AbsoluteContentSize.Y)
+                ItemHolder.CanvasSize = UDim2.new(0, 0, 0, ItemHolderUIList.AbsoluteContentSize.Y)
 		end
 
 		function Cont:Dropdown(text, list, callback)
