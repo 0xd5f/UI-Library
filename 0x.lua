@@ -1425,7 +1425,7 @@ function DarkLib:Window(WindowTitle)
 			ItemHolder.CanvasSize = UDim2.new(0, 0, 0, ItemHolderUIList.AbsoluteContentSize.Y)
 		end
 
-		function Cont:Keybind(text, key, callback)
+        function Cont:Keybind(text, key, holdmode, callback)
 			local Key = key.Name
 
 			local Bind = Instance.new("TextButton")
@@ -1514,15 +1514,29 @@ function DarkLib:Window(WindowTitle)
 				end
 			)
 
-			game:GetService("UserInputService").InputBegan:connect(
-			function(current, pressed)
-				if not pressed then
-					if current.KeyCode.Name == Key then
-						pcall(callback)
-					end
-				end
+            UserInputService.InputBegan:Connect(function(Input)
+                if UserInputService:GetFocusedTextBox() then return end
+                
+                if Input.KeyCode.Name == Key or Input.UserInputType.Name == Key then
+                    if holdmode then
+                        Holding = true
+                        callback(Holding)
+                    else
+                        callback()
+                    end
+                end
 			end
 			)
+
+            UserInputService.InputEnded:Connect(function(Input)
+                if Input.KeyCode.Name == Key or Input.UserInputType.Name == Key then
+                    if holdmode and Holding then
+                        Holding = false
+                        callback(Holding)
+                    end
+                end
+            end)        
+
 			ItemHolder.CanvasSize = UDim2.new(0, 0, 0, ItemHolderUIList.AbsoluteContentSize.Y)
 		end
 
@@ -1552,5 +1566,4 @@ function DarkLib:Window(WindowTitle)
 	return Win
 end
 return DarkLib
-
 
